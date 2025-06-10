@@ -51,6 +51,8 @@ Chỉnh sửa file `.env`:
 ```env
 PORT=3000
 NODE_ENV=development
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-app-password
 SENDER_NAME=Website Contact Form
@@ -65,14 +67,6 @@ SENDER_NAME=Website Contact Form
 5. Copy mật khẩu 16 ký tự vào `EMAIL_PASS`
 
 ## 🚀 Chạy ứng dụng
-
-### Development mode
-
-```bash
-npm run dev
-```
-
-### Production mode
 
 ```bash
 npm start
@@ -193,16 +187,3 @@ sendContactEmail({
 - **Phone**: Format số điện thoại Việt Nam (0xxxxxxxxx, +84xxxxxxxxx)
 - **Message**: Tối thiểu 10 ký tự
 - **RecipientEmail**: Format email hợp lệ
-
-## 🌍 Deploy
-
-### Heroku
-
-```bash
-# Cài Heroku CLI và login
-heroku create your-app-name
-heroku config:set EMAIL_USER=your-email@gmail.com
-heroku config:set EMAIL_PASS=your-app-password
-heroku config:set SENDER_NAME="Your Website"
-git push heroku main
-```
