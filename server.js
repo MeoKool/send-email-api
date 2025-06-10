@@ -86,13 +86,6 @@ app.post("/api/contact", limiter, async (req, res) => {
       });
     }
 
-    if (message.trim().length < 10) {
-      return res.status(400).json({
-        success: false,
-        error: "Tin nhắn phải có ít nhất 10 ký tự",
-      });
-    }
-
     // Tạo nội dung email
     const emailContent = {
       from: `"${process.env.SENDER_NAME || "Website Contact Form"}" <${
